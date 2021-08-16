@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+}
+
+.header {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sheet {
+  background-color: blue;
+  width: 50%;
+}
+
+.panel {
+  background-color: pink;
+  width: 100%;
+}
