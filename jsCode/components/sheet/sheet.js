@@ -17,7 +17,7 @@ import { BaseComponent } from './../components.js';
 var Sheet = /** @class */ (function (_super) {
     __extends(Sheet, _super);
     function Sheet() {
-        return _super.call(this, '<div class="sheet">시트</div>') || this;
+        return _super.call(this, "\n        <div class=\"sheet\">\n            <div class=\"sheet__container\"></div>\n            <input type=\"file\" class=\"sheet__fileLoader\" />\n        </div>") || this;
     }
     return Sheet;
 }(BaseComponent));
