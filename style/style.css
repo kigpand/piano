@@ -14,14 +14,26 @@ body {
 }
 
 .sheet {
-  width: 70%;
   margin-top: 1rem;
 }
 
+.sheet__fileLoader {
+  display: none;
+}
+
+.sheet__viewer {
+  width: 500px;
+  overflow: hidden;
+}
+
 .sheet__container {
-  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.sheet__image {
+  width: 500px;
   height: 500px;
-  background-color: blue;
 }
 
 .panel {
