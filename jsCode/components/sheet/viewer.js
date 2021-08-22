@@ -13,20 +13,24 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-import { SheetViewer } from './sheetViewer.js';
 import { BaseComponent } from './../components.js';
-import { SheetHeader } from './sheetHeader.js';
-var Sheet = /** @class */ (function (_super) {
-    __extends(Sheet, _super);
-    function Sheet() {
-        var _this = _super.call(this, "\n        <div class=\"sheet\">\n        </div>") || this;
-        var sheet = _this.element;
-        var header = new SheetHeader();
-        var viewer = new SheetViewer();
-        viewer.attachTo(sheet);
-        header.attachTo(sheet);
+var ImgArray = ['img/butterfly.png', 'img/airplane.jpg', 'img/littlestar.jpg'];
+var defaultImgArray = function (container, imgArray) {
+    for (var i = 0; i < imgArray.length; i++) {
+        var img = document.createElement('img');
+        img.classList.add('sheet__image');
+        img.src = imgArray[i];
+        container.appendChild(img);
+    }
+};
+var Viewer = /** @class */ (function (_super) {
+    __extends(Viewer, _super);
+    function Viewer() {
+        var _this = _super.call(this, "<div class=\"sheet__viewer\">\n        <div class=\"sheet__container\"></div>\n    </div>") || this;
+        var sheetContainer = _this.element.querySelector(".sheet__container");
+        defaultImgArray(sheetContainer, ImgArray);
         return _this;
     }
-    return Sheet;
+    return Viewer;
 }(BaseComponent));
-export { Sheet };
+export { Viewer };
