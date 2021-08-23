@@ -14,10 +14,27 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 import { BaseComponent } from './../components.js';
+import { PanelKey } from './PanelKey.js';
+var addToKeys = function (music, key) {
+    music.map(function (v) {
+        v.attachTo(key);
+    });
+};
 var Panel = /** @class */ (function (_super) {
     __extends(Panel, _super);
     function Panel() {
-        return _super.call(this, '<div class="panel">패널</div>') || this;
+        var _this = _super.call(this, "\n        <div class=\"panel\">\n            <div class=\"panel__options\"></div>\n            <div class=\"panel__key\"></div>\n        </div>") || this;
+        var key = _this.element.querySelector(".panel__key");
+        var Music = [new PanelKey("도", "도"),
+            new PanelKey("시", "시"),
+            new PanelKey("라", "라"),
+            new PanelKey("솔", "솔"),
+            new PanelKey("파", "파"),
+            new PanelKey("미", "미"),
+            new PanelKey("레", "레"),
+            new PanelKey("도", "도")];
+        addToKeys(Music, key);
+        return _this;
     }
     return Panel;
 }(BaseComponent));

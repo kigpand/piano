@@ -45,6 +45,28 @@ body {
 }
 
 .panel {
-  background-color: pink;
+  margin-top: 3rem;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel__key {
+  display: flex;
+}
+
+.panel__symbol {
+  width: 50px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.panel__symbol:hover {
+  background-color: gray;
+  cursor: pointer;
 }
