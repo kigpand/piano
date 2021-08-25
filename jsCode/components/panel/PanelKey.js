@@ -17,7 +17,14 @@ import { BaseComponent } from '../components.js';
 var PanelKey = /** @class */ (function (_super) {
     __extends(PanelKey, _super);
     function PanelKey(symbol, music) {
-        return _super.call(this, "<div class=\"panel__symbol\">" + symbol + "</div>") || this;
+        var _this = _super.call(this, "<div class=\"panel__symbol\"></div>" + symbol + "</div>") || this;
+        var panelSymbol = _this.element;
+        panelSymbol.addEventListener("click", function () {
+            console.log(music);
+            var audio = new Audio("/music/" + music + ".mp3");
+            audio.play();
+        });
+        return _this;
     }
     return PanelKey;
 }(BaseComponent));

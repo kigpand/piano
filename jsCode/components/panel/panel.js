@@ -32,7 +32,7 @@ var Panel = /** @class */ (function (_super) {
             new PanelKey("파", "파"),
             new PanelKey("미", "미"),
             new PanelKey("레", "레"),
-            new PanelKey("도", "도")];
+            new PanelKey("도", "도_")];
         addToKeys(Music, key);
         return _this;
     }
