@@ -18,18 +18,20 @@ export class SheetHeader extends BaseComponent<HTMLElement>{
     constructor(){
         super(`
         <div class="sheet__btns">
-            <div class="sheet__auto">자동</div>
-            <div class="sheet__direction">
-                <div class="sheet__left">왼쪽</div>
-                <div class="sheet__right">오른쪽</div>
+            <div class="sheet__selector">
+                <div class="sheet__auto">자동</div>
+                <div class="sheet__direction">
+                    <img src="/img/arrow.png" class="sheet__left"></img>
+                    <img src="/img/arrow.png" class="sheet__right"></img>
+                </div>
+                <select class="sheet__select">
+                    <option value="">- 선택 -</option>
+                    <option value="1">1배</option>
+                    <option value="2">2배</option>
+                    <option value="3">3배</option>
+                </select>
             </div>
-            <select class="sheet__select">
-                <option value="">- 선택 -</option>
-                <option value="1">1배</option>
-                <option value="2">2배</option>
-                <option value="3">3배</option>
-            </select>
-            <div class="sheet__fileInputer">파일 넣을곳</div>
+            <img src="/img/upload.png" class="sheet__fileInputer"></img>
             <input type="file" multiple class="sheet__fileLoader" accept=".jpg, .jpeg, .png"/>
         </div>`)
 

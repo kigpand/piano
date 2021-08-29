@@ -2,9 +2,33 @@ body {
   margin: 0;
 }
 
+@font-face {
+  font-family: "HSYuji-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSYuji-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.backgroundImg {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url("/img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+}
+
 .header {
   margin-top: 1rem;
   text-align: center;
+  font-size: 1.5rem;
+  color: orange;
+  font-family: HSYuji-Regular;
 }
 
 .page {
@@ -26,9 +50,32 @@ body {
   overflow: hidden;
 }
 
+.sheet__left,
+.sheet__right {
+  width: 50px;
+  height: 30px;
+}
+
+.sheet__right {
+  transform: rotate(180deg);
+}
+
 .sheet__container {
   display: flex;
   position: relative;
+  transition-duration: 1s;
+}
+
+.sheet__selector {
+  display: flex;
+  align-items: center;
+}
+
+.sheet__auto {
+  font-weight: bold;
+  margin-right: 1rem;
+  background-color: white;
+  padding: 0.1rem;
 }
 
 .sheet__select {
@@ -37,11 +84,21 @@ body {
 
 .sheet__btns {
   display: flex;
+  align-items: center;
+  margin-bottom: 0.3rem;
+  justify-content: space-between;
+}
+
+.sheet__fileInputer {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
 
 .sheet__image {
   width: 500px;
   height: 500px;
+  border-radius: 10px;
 }
 
 .panel {
@@ -59,6 +116,7 @@ body {
 .panel__symbol {
   width: 50px;
   height: 200px;
+  background-color: white;
   border: 1px solid black;
   border-radius: 4px;
   display: flex;
@@ -69,4 +127,8 @@ body {
 .panel__symbol:hover {
   background-color: gray;
   cursor: pointer;
+}
+
+.play {
+  background-color: gray;
 }

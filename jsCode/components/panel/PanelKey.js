@@ -16,12 +16,11 @@ var __extends = (this && this.__extends) || (function () {
 import { BaseComponent } from '../components.js';
 var PanelKey = /** @class */ (function (_super) {
     __extends(PanelKey, _super);
-    function PanelKey(symbol, music) {
-        var _this = _super.call(this, "<div class=\"panel__symbol\"></div>" + symbol + "</div>") || this;
+    function PanelKey(symbol, music, className) {
+        var _this = _super.call(this, "<div class=\"panel__symbol _" + className + "\">" + symbol + "</div>") || this;
+        var audio = new Audio("/music/" + music + ".mp3");
         var panelSymbol = _this.element;
         panelSymbol.addEventListener("click", function () {
-            console.log(music);
-            var audio = new Audio("/music/" + music + ".mp3");
             audio.play();
         });
         return _this;

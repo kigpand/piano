@@ -25,14 +25,14 @@ var Panel = /** @class */ (function (_super) {
     function Panel() {
         var _this = _super.call(this, "\n        <div class=\"panel\">\n            <div class=\"panel__options\"></div>\n            <div class=\"panel__key\"></div>\n        </div>") || this;
         var key = _this.element.querySelector(".panel__key");
-        var Music = [new PanelKey("도", "도"),
-            new PanelKey("시", "시"),
-            new PanelKey("라", "라"),
-            new PanelKey("솔", "솔"),
-            new PanelKey("파", "파"),
-            new PanelKey("미", "미"),
-            new PanelKey("레", "레"),
-            new PanelKey("도", "도_")];
+        var Music = [new PanelKey("도", "도", "do"),
+            new PanelKey("시", "시", "si"),
+            new PanelKey("라", "라", "ra"),
+            new PanelKey("솔", "솔", "sol"),
+            new PanelKey("파", "파", "pa"),
+            new PanelKey("미", "미", "mi"),
+            new PanelKey("레", "레", "re"),
+            new PanelKey("도", "도_", "low_Do")];
         addToKeys(Music, key);
         return _this;
     }
