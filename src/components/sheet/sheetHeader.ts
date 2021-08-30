@@ -4,11 +4,15 @@ let IMG_POSITION = 0;
 let curPos = 0;
 
 const onAutoPaging = (speed: number) =>{
+    const sheetContainer = document.querySelector(".sheet__container")! as HTMLElement;
+    const imgLength = sheetContainer.childNodes.length;
     let count  = 0;
     const paging = setInterval(()=>{
-        console.log("테스트");
+        IMG_POSITION -= IMG_SIZE;
+        sheetContainer.style.transform = `translateX(${IMG_POSITION}px)`;
+        curPos = curPos + 1;
         count++;
-        if(count === 5){
+        if(count === imgLength-1){
             clearInterval(paging);
         }
     },speed);
@@ -96,9 +100,14 @@ export class SheetHeader extends BaseComponent<HTMLElement>{
         })
 
         selectBox.addEventListener("change",()=>{
-            console.log(selectBox.selectedIndex);
             if(selectBox.selectedIndex === 1){
-                onAutoPaging(500);
+                onAutoPaging(5000);
+            }
+            else if(selectBox.selectedIndex === 2){
+                onAutoPaging(3000);
+            }
+            else if(selectBox.selectedIndex === 3){
+                onAutoPaging(1000);
             }
         })
     }

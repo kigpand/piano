@@ -18,11 +18,15 @@ var IMG_SIZE = 500;
 var IMG_POSITION = 0;
 var curPos = 0;
 var onAutoPaging = function (speed) {
+    var sheetContainer = document.querySelector(".sheet__container");
+    var imgLength = sheetContainer.childNodes.length;
     var count = 0;
     var paging = setInterval(function () {
-        console.log("테스트");
+        IMG_POSITION -= IMG_SIZE;
+        sheetContainer.style.transform = "translateX(" + IMG_POSITION + "px)";
+        curPos = curPos + 1;
         count++;
-        if (count === 5) {
+        if (count === imgLength - 1) {
             clearInterval(paging);
         }
     }, speed);
@@ -84,9 +88,14 @@ var SheetHeader = /** @class */ (function (_super) {
             }
         });
         selectBox.addEventListener("change", function () {
-            console.log(selectBox.selectedIndex);
             if (selectBox.selectedIndex === 1) {
-                onAutoPaging(500);
+                onAutoPaging(5000);
+            }
+            else if (selectBox.selectedIndex === 2) {
+                onAutoPaging(3000);
+            }
+            else if (selectBox.selectedIndex === 3) {
+                onAutoPaging(1000);
             }
         });
         return _this;
